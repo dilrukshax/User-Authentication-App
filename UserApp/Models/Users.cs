@@ -4,6 +4,6 @@ namespace UserApp.Models
 {
     public class Users : IdentityUser
     {
-        public string Fullname { get; set; }
+        public string FullName { get; set; }
     }
 }

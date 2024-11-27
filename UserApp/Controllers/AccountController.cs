@@ -2,8 +2,9 @@
 using Microsoft.AspNetCore.Mvc;
 using UserApp.Models;
 using UserApp.ViewModels;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace UserApp.Controllers
+namespace UsersApp.Controllers
 {
     public class AccountController : Controller
     {
@@ -43,7 +44,7 @@ namespace UserApp.Controllers
 
         public IActionResult Register()
         {
-            return View();  
+            return View();
         }
 
         [HttpPost]
@@ -51,14 +52,14 @@ namespace UserApp.Controllers
         {
             if (ModelState.IsValid)
             {
-                Users user = new Users
+                Users users = new Users
                 {
-                    Fullname = model.Name,
+                    FullName = model.Name,
                     Email = model.Email,
                     UserName = model.Email,
                 };
 
-                var result = await userManager.CreateAsync(user, model.Password);
+                var result = await userManager.CreateAsync(users, model.Password);
 
                 if (result.Succeeded)
                 {
@@ -72,7 +73,7 @@ namespace UserApp.Controllers
                     }
 
                     return View(model);
-                }                
+                }
             }
             return View(model);
         }
@@ -82,9 +83,77 @@ namespace UserApp.Controllers
             return View();
         }
 
-        public IActionResult ChangePassword()
+        [HttpPost]
+        public async Task<IActionResult> VerifyEmail(VerifyEmailViewModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var user = await userManager.FindByNameAsync(model.Email);
+
+                if (user == null)
+                {
+                    ModelState.AddModelError("", "Something is wrong!");
+                    return View(model);
+                }
+                else
+                {
+                    return RedirectToAction("ChangePassword", "Account", new { username = user.UserName });
+                }
+            }
+            return View(model);
+        }
+
+        public IActionResult ChangePassword(string username)
+        {
+            if (string.IsNullOrEmpty(username))
+            {
+                return RedirectToAction("VerifyEmail", "Account");
+            }
+            return View(new ChangePasswordViewModel { Email = username });
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await userManager.FindByNameAsync(model.Email);
+                if (user != null)
+                {
+                    var result = await userManager.RemovePasswordAsync(user);
+                    if (result.Succeeded)
+                    {
+                        result = await userManager.AddPasswordAsync(user, model.NewPassword);
+                        return RedirectToAction("Login", "Account");
+                    }
+                    else
+                    {
+
+                        foreach (var error in result.Errors)
+                        {
+                            ModelState.AddModelError("", error.Description);
+                        }
+
+                        return View(model);
+                    }
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Email not found!");
+                    return View(model);
+                }
+            }
+            else
+            {
+                ModelState.AddModelError("", "Something went wrong. try again.");
+                return View(model);
+            }
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            await signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
     }
 }
