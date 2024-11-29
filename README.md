@@ -82,16 +82,16 @@ This will start the application locally. You can now access it in your browser a
 ## **Screenshots**
 
 ### **Login Page**
-![Login Page Screenshot](screenshot-login.png)
+![Web capture_29-11-2024_9134_localhost](https://github.com/user-attachments/assets/4150f0a3-0aa2-45c8-9fe4-bbe47d279247)
 
 ### **Registration Page**
-![Registration Page Screenshot](screenshot-register.png)
+![Web capture_29-11-2024_9110_localhost](https://github.com/user-attachments/assets/40c18751-446c-497a-a76e-08f2dd58eec9)
 
 ### **Email Verification Page**
-![Email Verification Page Screenshot](screenshot-email-verification.png)
+![Web capture_29-11-2024_923_localhost](https://github.com/user-attachments/assets/44e6da0f-c28b-4a24-8bb0-d57df5565fb8)
 
 ### **Password Recovery Page**
-![Password Recovery Page Screenshot](screenshot-password-recovery.png)
+![Web capture_29-11-2024_9234_localhost](https://github.com/user-attachments/assets/742a350a-836f-4706-8b8b-66b41535a46a)
 
 ---
 
