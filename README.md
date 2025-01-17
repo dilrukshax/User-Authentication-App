@@ -1,8 +1,10 @@
 # **Custom Login, Registration, Email Verification, and Password Recovery in ASP.NET Core MVC**
 
-## **Project Overview**
-
-This project demonstrates how to implement **custom login**, **registration**, **email verification**, and **password recovery** pages in an **ASP.NET Core MVC application** using the **Identity framework**. It leverages ASP.NET Core’s built-in **Identity** functionality and integrates a custom approach for managing user data, email verification, password recovery, and session management.
+<p align="center">
+![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-512BD4?style=for-the-badge&logo=.net&logoColor=white)
+![Entity Framework Core](https://img.shields.io/badge/Entity_Framework_Core-512BD4?style=for-the-badge&logo=.net&logoColor=white)
+![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
+</p>
 
 ### **Key Features**
 - **Custom User Authentication**: Build login and registration forms from scratch using ASP.NET Core Identity.
@@ -12,18 +14,6 @@ This project demonstrates how to implement **custom login**, **registration**, *
 - **User Logout**: Allow users to log out and access login/registration pages.
 - **Database Integration**: Uses SQL Server to manage user data and integrates with Entity Framework for data operations.
 
----
-
-## **Technologies Used**
-
-### Core Technologies:
-![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-512BD4?style=for-the-badge&logo=.net&logoColor=white)
-![Entity Framework Core](https://img.shields.io/badge/Entity_Framework_Core-512BD4?style=for-the-badge&logo=.net&logoColor=white)
-
-### Additional Technologies:
-![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
-
----
 
 ## **Setup Instructions**
 
@@ -77,7 +67,6 @@ dotnet run
 
 This will start the application locally. You can now access it in your browser at `https://localhost:5001`.
 
----
 
 ## **Screenshots**
 
@@ -93,7 +82,6 @@ This will start the application locally. You can now access it in your browser a
 ### **Password Recovery Page**
 ![Web capture_29-11-2024_9234_localhost](https://github.com/user-attachments/assets/742a350a-836f-4706-8b8b-66b41535a46a)
 
----
 
 ## **Contributing**
 
@@ -122,13 +110,6 @@ Contributions are welcome! You can help improve this project by:
    ```
 6. Open a pull request to the main repository.
 
----
-
-## **Licenses and Acknowledgements**
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
 
 ## **Key Insights**
 
@@ -138,7 +119,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - **MVC Architecture**: The **Model-View-Controller (MVC)** pattern in ASP.NET Core allows for clean separation of concerns, making the application more modular and maintainable.
 - **Session Management**: Managing user sessions with cookies improves user convenience and ensures that users remain authenticated across different pages.
 
----
 
 ## **Contact**
 
@@ -147,4 +127,3 @@ For inquiries or support, feel free to open an issue on the repository or contac
 - **Email**: dilndilruksha0@gmail.com
 - **GitHub**: [@dilrukshax](https://github.com/dilrukshax)
 
----
