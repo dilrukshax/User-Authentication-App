@@ -1,9 +1,12 @@
 # **Custom Login, Registration, Email Verification, and Password Recovery in ASP.NET Core MVC**
 
+
 <p align="center">
+  
 ![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-512BD4?style=for-the-badge&logo=.net&logoColor=white)
 ![Entity Framework Core](https://img.shields.io/badge/Entity_Framework_Core-512BD4?style=for-the-badge&logo=.net&logoColor=white)
 ![SQL Server](https://img.shields.io/badge/SQL_Server-CC2927?style=for-the-badge&logo=microsoft-sql-server&logoColor=white)
+
 </p>
 
 ### **Key Features**
